@@ -1,27 +1,12 @@
-# CODE-KATA-Shopping-Cart
+##Description
 
-## Workflow
-- Treat this like a real assignment, but only spend up to two hours on it - it doesn't matter how far you get
-- Fork the project to your personal Github account (click on the fork button in the top right corner)
-- Clone the forked version of this repository
-- Include a `README`
-- Push your work up to your fork
-- Submit a link to your forked repository
 
-## Instructions
-You should implement a supermarket checkout which:
-- always accepts a string of items and gives back the total price
-- discounts any offers from the total price
+First I need to import ‘scanner’ to accept the user input and store the item of list entered in a string variable called ‘items’
 
-Use the following pricing information:
+As only item A and item B have discounts available, and so only the number of items of A and B purchased need to be counted and so corresponding variables are created. 
 
-| Item  | Price | Offer     |
-| :---: | :---: | :---:     |
-| A     | 50    | 3 for 130 |
-| B     | 30    | 2 for 37  |
-| C     | 20    | N/A       |
-| D     | 10    | N/A       |
+A for loop is used to read each character in the string ‘items’ and add the correct amount to the total price. If the user has entered an incorrect item (not A,B,C or D), a counter is incremented each time to keep a record of the invalid selections.
 
-For example:
-- `'DABA'` gives `140`
-- `'BBBB'` gives `74`
+If the number of item A is purchased more than 3 times, a discount is applied. Normally, the customer would have been charged 150 but with the discount 30 is subtracted from the total price. If the customer have purchased more than 3, integer division is used to subtract as this number is then multiple by 30 and subtracted from the total price. The same is done for the number of item B, but instead only 23 is subtracted but for every 2 purchases.
+
+If the customer has entered an invalid item letter, the customer is notified that they have made an invalid selection and it has not been included in the price.
